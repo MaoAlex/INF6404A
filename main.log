@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.14)  11 MAY 2016 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.14)  11 MAY 2016 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,22 +944,22 @@ ices hos-pi-ta-liers sp^^Secialis^^Ses
 File: Figure1.jpg Graphic file (type jpg)
  <use Figure1.jpg>
 Package pdftex.def Info: Figure1.jpg used on input line 82.
-(pdftex.def)             Requested size: 413.99895pt x 232.87184pt.
+(pdftex.def)             Requested size: 517.5pt x 291.0929pt.
 
-Overfull \hbox (42.76842pt too wide) in paragraph at lines 80--83
+Overfull \hbox (89.36395pt too wide) in paragraph at lines 80--83
  []|  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3] [4 <./Figure1.jpg>]
+[3] [4 <./Figure1.jpg>] [5]
 Overfull \hbox (3.02818pt too wide) in paragraph at lines 104--105
 []\OT1/cmr/m/n/10 Il se-rait pos-sible ^^Segalement de pla-cer des cap-teurs de
  pr^^Sesence dans la chambre
  []
 
-[5]
+
 Overfull \hbox (3.88939pt too wide) in paragraph at lines 110--112
 []\OT1/cmr/m/n/10 Le but ^^Setant aussi de sur-veiller l'en-vi-ron-ne-ment du p
 a-tient as-sez r^^Seguli^^Rerement
@@ -996,12 +996,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--175
 
  []
 
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
-[8] [9] (./main.bbl
+[9] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 16--19
 []\OT1/cmr/m/n/10 Soins in-ten-sifs - d^^Sefinition, 2016.  $\OT1/cmtt/m/n/10 h
 ttp : / / sante-[]medecine .
@@ -1059,7 +1059,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--50
 es-[]n48553 .
  []
 
-
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 52--54
 []\OT1/cmr/m/n/10 Radio-identification, 2016.  $\OT1/cmtt/m/n/10 https : / / fr
  . wikipedia . org / wiki /
@@ -1083,7 +1083,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--59
 ctronics .
  []
 
-[10]
+
 Underfull \hbox (badness 3158) in paragraph at lines 65--68
 []\OT1/cmr/m/n/10 Syst^^Reme de lo-ca-li-sa-tion du per-son-nel hos-pi-tali^^Re
 re par rfid ac-tive.
@@ -1122,7 +1122,7 @@ sy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
 0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12
 .pfb>
-Output written on main.pdf (11 pages, 240675 bytes).
+Output written on main.pdf (11 pages, 240687 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream
