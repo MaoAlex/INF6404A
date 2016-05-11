@@ -74,8 +74,6 @@ Le système que nous allons proposer va avoir pour but de surveiller l’état d
 
 Nous présentons dans ce qui suit un ensemble d’appareils connectés destinés à surveiller le patient lors de sa présence dans les unités de soins intensifs jusqu'à sa sortie de celui-ci (transition d’un service à un autre par exemple) en fournissant un ensemble de capteurs et d’autre dispositifs pour permettre ce suivi lors de son séjour à l’hôpital. On décrira donc dans un premier temps les différents dispositifs nécessaires pour surveiller le patient et son environnement (les diverses conditions de sa chambre). Une telle mise en place de ces dispositif est illustrée sur la Figure 1. Les capteurs spécifiques représentent les capteurs qui ne sont appropriés que pour certains cas particuliers d’état du patient (coma, diabète, blessure grave, cancer).
 
-On décrira ensuite les dispositifs nécessaires à mettre en place sut le patient pour le surveiller lors de son passage du service de soins intensifs à un autre service, et jusqu’à sa sortie de l’hôpital. Cette situation est illustrée par la Figure 2. En effet, une fois les soins intensifs terminés, il est nécessaire de continuer à surveiller le patient encore quelques temps avant de lui permettre de sortir de l’hôpital.
-\\
 \begin{figure}[h!]
 	\hspace*{-3cm}
 	\centering
@@ -84,6 +82,15 @@ On décrira ensuite les dispositifs nécessaires à mettre en place sut le patie
 	\label{fig:balance}
 \end{figure}
 
+On décrira ensuite les dispositifs nécessaires à mettre en place sut le patient pour le surveiller lors de son passage du service de soins intensifs à un autre service, et jusqu’à sa sortie de l’hôpital. Cette situation est illustrée par la Figure 2. En effet, une fois les soins intensifs terminés, il est nécessaire de continuer à surveiller le patient encore quelques temps avant de lui permettre de sortir de l’hôpital.
+\\
+\begin{figure}[h!]
+	\hspace*{-1cm}
+	\centering
+	\includegraphics[width=1.2\textwidth]{Figure2.jpg}
+	\caption{Dispositifs pour un patient classique}
+	\label{fig:balance}
+\end{figure}
 
 Tout d’abord, afin de mesurer la fréquence respiratoire, le rythme cardiaque, la température du corps, la pression sanguine, et les phases de sommeil du patient, des capteurs peuvent être utilisés. Dans notre recherche des technologies IoT actuelles, il s’avère que le patch Health Patch \cite{HealthPatch} permet de mesurer toutes ces variables, ce qui a l’avantage de regrouper plusieurs capteurs en un seul élément  et ici sur un seul patch. On a besoin d’une mesure de ces variables en temps réel (surtout pour la fréquence respiratoire et le rythme cardiaque), et à chaque instant, ou pour être plus précis à chaque demi seconde, pour être rapidement prévenu en cas d’anomalie et afin de permettre au personnel soignant d’intervenir rapidement en cas d’urgence.
 
@@ -121,35 +128,33 @@ Enfin, afin de permettre de localiser approximativement le patient, mais aussi p
 
 Il est à noter, du côté du personnel soignant, et en particulier des médecins, que des bracelets RFID \cite{BraceletRFID} leur seront fourni (comme pour les patients), le but étant ici de les localiser afin de permettre, en cas d’alerte sur un patient, de prévenir l’aide soignant ou le médecin le plus proche (et possédant les requis correspondant pour le problème signalé).
 
-
-%\begin{center}
-%	\begin{table}[h]
-%		\hspace{-1.5cm} 
-%		\begin{tabular}{|c|c|c|c|c|c|c|c|}
-%		\hline
-%		Number of Threads & 1 & 2 & 4 & 8 & 16 & 32 & 64 \\ \hline
-%		\hline
-%		MySQL Cluster     & 25.11756 & 13.00766 & 6.86814 & 4.17984 & 5.1518  & 5.7257  & 15.40208  \\ \hline
-%		MySQL Standalone  & 3.22312  & 2.3859   & 1.777   & 1.515   & 1.41776 & 1.45096 & 1.51372   \\ \hline
-%	\end{tabular}
-%	\caption{Average Execution Time with Number Max of Requests = 1000, in seconds}
-%	\end{table}
-%\end{center}
-
-
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=0.9\textwidth]{Figure1.png}
-%	\caption{Gatekeeper pattern Solution}
-%	\label{fig:balance}
-%\end{figure}
-
 \section {Protocoles de Communication et Réseaux}
 
 L’internet des objets est étroitement lié à Internet, les réseaux de communications mobiles et les capteurs sans fil réseau. L’IoT est un réseau qui interconnecte des objets physiques avec des adresses identifiables pour fournir un service supplémentaire. Il n’est pas seulement constitué d’ordinateurs, de smartphones, etc.. mais aussi de plus en plus de petit appareils comme des étiquettes ou puces RFID, des capteurs et d’autres appareils qui n’ont pas forcément les capacités d’accueillir les moyens d’adressage classique par IP. Nous avons pour cela étudier différents protocoles de communications possibles pour ces appareils. La Figure 3 illustre les protocoles de communication que nous avons choisi pour notre solution IoT de Smart Health.
 \\
+\begin{figure}[h!]
+	\hspace*{-1cm}
+	\centering
+	\includegraphics[width=1.1\textwidth]{Figure3.png}
+	\caption{Protocoles de Communication et Réseaux de notre Système}
+	\label{fig:balance}
+\end{figure}
 
 Nous avons commencé par l’évaluation de différents protocoles physiques de communication, correspondant aux couches 1 (physique) et 2 (liaison) du modèle standard OSI. Le tableau 1 résume les caractéristiques de ces protocoles (et les met donc en comparaison).
+
+\begin{center}
+	\begin{table}[h]
+		\hspace{-1.5cm} 
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		Number of Threads & 1 & 2 & 4 & 8 & 16 & 32 & 64 \\ \hline
+		\hline
+		MySQL Cluster     & 25.11756 & 13.00766 & 6.86814 & 4.17984 & 5.1518  & 5.7257  & 15.40208  \\ \hline
+		MySQL Standalone  & 3.22312  & 2.3859   & 1.777   & 1.515   & 1.41776 & 1.45096 & 1.51372   \\ \hline
+	\end{tabular}
+	\caption{Average Execution Time with Number Max of Requests = 1000, in seconds}
+	\end{table}
+\end{center}
 
 L’utilisation de nombreux capteurs, sur un patient susceptible de bouger à la fois dans son lit voire dans la pièce nous impose d’office l’utilisation de protocoles sans fils, pour que la mobilité de la personne ne soit pas un problème. Les différents protocoles sans fil existants sont décrits ci-dessous.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.14)  11 MAY 2016 11:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.14)  11 MAY 2016 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -808,7 +808,14 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip53
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count133
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:balance' multiply defined.
+
+
+LaTeX Warning: Label `fig:balance' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -823,8 +830,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
 \scratchdimen=\dimen177
@@ -943,72 +949,91 @@ ices hos-pi-ta-liers sp^^Secialis^^Ses
 <Figure1.jpg, id=18, 722.7pt x 406.51875pt>
 File: Figure1.jpg Graphic file (type jpg)
  <use Figure1.jpg>
-Package pdftex.def Info: Figure1.jpg used on input line 82.
+Package pdftex.def Info: Figure1.jpg used on input line 80.
 (pdftex.def)             Requested size: 517.5pt x 291.0929pt.
 
-Overfull \hbox (89.36395pt too wide) in paragraph at lines 80--83
+Overfull \hbox (89.36395pt too wide) in paragraph at lines 78--81
  []|  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3] [4 <./Figure1.jpg>] [5]
-Overfull \hbox (3.02818pt too wide) in paragraph at lines 104--105
+<Figure2.jpg, id=19, 722.7pt x 406.51875pt>
+File: Figure2.jpg Graphic file (type jpg)
+ <use Figure2.jpg>
+Package pdftex.def Info: Figure2.jpg used on input line 90.
+(pdftex.def)             Requested size: 413.99895pt x 232.87184pt.
+
+Overfull \hbox (42.76842pt too wide) in paragraph at lines 88--91
+ []|  [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3] [4 <./Figure1.jpg>] [5 <./Figure2.jpg>]
+Overfull \hbox (3.02818pt too wide) in paragraph at lines 111--112
 []\OT1/cmr/m/n/10 Il se-rait pos-sible ^^Segalement de pla-cer des cap-teurs de
  pr^^Sesence dans la chambre
  []
 
 
-Overfull \hbox (3.88939pt too wide) in paragraph at lines 110--112
+Overfull \hbox (3.88939pt too wide) in paragraph at lines 117--119
 []\OT1/cmr/m/n/10 Le but ^^Setant aussi de sur-veiller l'en-vi-ron-ne-ment du p
 a-tient as-sez r^^Seguli^^Rerement
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
  []
 
-
-Overfull \hbox (19.72493pt too wide) in paragraph at lines 117--118
+[6]
+Overfull \hbox (19.72493pt too wide) in paragraph at lines 124--125
 []\OT1/cmr/m/n/10 Aussi, si le pa-tient est diab^^Setique, le m^eme cap-teur de
  glyc^^Semie que pr^^Sec^^Sedemment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
+<Figure3.png, id=33, 1177.39874pt x 1508.63625pt>
+File: Figure3.png Graphic file (type png)
+ <use Figure3.png>
+Package pdftex.def Info: Figure3.png used on input line 153.
+(pdftex.def)             Requested size: 379.5021pt x 486.27249pt.
+
+Overfull \hbox (8.27158pt too wide) in paragraph at lines 151--154
+ []|  [] 
+ []
+
+[7] [8 <./Figure3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
-
- []
-
-[9] (./main.bbl
+[10] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 16--19
 []\OT1/cmr/m/n/10 Soins in-ten-sifs - d^^Sefinition, 2016.  $\OT1/cmtt/m/n/10 h
 ttp : / / sante-[]medecine .
  []
 
+[11]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -1059,7 +1084,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--50
 es-[]n48553 .
  []
 
-[10]
+
 Underfull \hbox (badness 10000) in paragraph at lines 52--54
 []\OT1/cmr/m/n/10 Radio-identification, 2016.  $\OT1/cmtt/m/n/10 https : / / fr
  . wikipedia . org / wiki /
@@ -1101,31 +1126,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--68
  personnel _
  []
 
-) [11] (./main.aux) ) 
+) [12] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 22832 strings out of 493089
- 561660 string characters out of 6134842
+ 22843 strings out of 493089
+ 561812 string characters out of 6134842
  715521 words of memory out of 5000000
- 25888 multiletter control sequences out of 15000+600000
+ 25896 multiletter control sequences out of 15000+600000
  11872 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,7n,77p,1154b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
-0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12
-.pfb>
-Output written on main.pdf (11 pages, 240687 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (12 pages, 391650 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
