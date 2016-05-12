@@ -133,4 +133,10 @@ Mqtt, 2016.
 Coap, 2014.
 \newblock \url{http://coap.technology}.
 
+\bibitem{hennebert2014security}
+Christine Hennebert and Jessye Dos~Santos.
+\newblock Security protocols and privacy issues into 6lowpan stack: A
+  synthesis.
+\newblock {\em Internet of Things Journal, IEEE}, 1(5):384--398, 2014.
+
 \end{thebibliography}
