@@ -12,6 +12,11 @@ Ovidiu Vermesan and Peter Friess.
   Deployment}.
 \newblock River Publishers, 2014.
 
+\bibitem{OrangeHealthCare}
+[infographie] la transformation digitale de l'hôpital.
+\newblock
+  \url{http://www.orange-business.com/fr/blogs/e-sante/hopital-numerique/infographie-la-transformation-digitale-de-l-hopital}.
+
 \bibitem{SoinsIntensifs}
 Soins intensifs - définition, 2016.
 \newblock
@@ -65,5 +70,67 @@ Vitalpatch™, 2016.
 Système de localisation du personnel hospitalière par rfid active.
 \newblock
   \url{http://www.kimaldi.com/kimaldi_fre/secteurs/geriatriques_et_centres_sanitaires/systeme_de_localisation_du_personnel_hospitaliere_par_rfid_active}.
+
+\bibitem{Physique}
+Zigbee.
+\newblock \url{https://fr.wikipedia.org/wiki/ZigBee}.
+
+\bibitem{catarinucci2015iot}
+Luca Catarinucci, Danilo De~Donno, Luca Mainetti, Luca Palano, Luigi Patrono,
+  Maria~Laura Stefanizzi, and Luciano Tarricone.
+\newblock An iot-aware architecture for smart healthcare systems.
+\newblock {\em Internet of Things Journal, IEEE}, 2(6):515--526, 2015.
+
+\bibitem{Wifi}
+Wi-fi, 2016.
+\newblock \url{https://fr.wikipedia.org/wiki/Wi-Fi}.
+
+\bibitem{Bluetooth}
+Bluetooth, 2016.
+\newblock \url{https://fr.wikipedia.org/wiki/Bluetooth}.
+
+\bibitem{1IEEE802.15.4}
+Internet of things: 802.15.4, 6lowpan, rpl, coap, 2010.
+\newblock
+  \url{https://www.utwente.nl/ewi/dacs/colloquium/archive/2010/slides/2010-utwente-6lowpan-rpl-coap.pdf}.
+
+\bibitem{2IEEE802.15.4}
+Ieee std. 802.15.4, 2005.
+\newblock
+  \url{http://www.cs.berkeley.edu/~prabal/teaching/cs294-11-f05/slides/day21.pdf}.
+
+\bibitem{BLE}
+Bluetooth low energy, 2016.
+\newblock \url{https://en.wikipedia.org/wiki/Bluetooth_low_energy}.
+
+\bibitem{NFC}
+Communication en champ proche, 2016.
+\newblock \url{https://fr.wikipedia.org/wiki/Communication_en_champ_proche}.
+
+\bibitem{jara2013internet}
+Antonio~J Jara, Latif Ladid, and Antonio~F G{\'o}mez-Skarmeta.
+\newblock The internet of everything through ipv6: An analysis of challenges,
+  solutions and opportunities.
+\newblock {\em JoWUA}, 4(3):97--118, 2013.
+
+\bibitem{6LoWPAN}
+6lowpan tutorial.
+\newblock
+  \url{http://voip.netlab.uky.edu/~fei/teaching/cs687/slides/4.6LoWPAN-tutorial.pdf}.
+
+\bibitem{kirsche2012unify}
+Michael Kirsche and Ronny Klauck.
+\newblock Unify to bridge gaps: Bringing xmpp into the internet of things.
+\newblock In {\em Pervasive Computing and Communications Workshops (PERCOM
+  Workshops), 2012 IEEE International Conference on}, pages 455--458. IEEE,
+  2012.
+
+\bibitem{MQTT}
+Mqtt, 2016.
+\newblock \url{https://fr.wikipedia.org/wiki/MQTT}.
+
+\bibitem{CoAP}
+Coap, 2014.
+\newblock \url{http://coap.technology}.
 
 \end{thebibliography}

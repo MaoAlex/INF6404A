@@ -17,7 +17,7 @@
 
 
 
-\title{Premier Rapport INF6404A : Couches Dispositifs et Réseaux}
+\title{Premier Rapport INF6404A : Développement des Couches Dispositifs, Communication et Réseaux}
 \author{
 	Alexandre Mao\\
 	David Johannès \\
@@ -133,19 +133,19 @@ Certains appareils ou capteurs pourraient intervenir dans l'amélioration du tra
 
 \section {Protocoles de Communication et Réseaux}
 
-L’internet des objets est étroitement lié à Internet, les réseaux de communications mobiles et les capteurs sans fil réseau. L’IoT est un réseau qui interconnecte des objets physiques avec des adresses identifiables pour fournir un service supplémentaire. Il n’est pas seulement constitué d’ordinateurs, de smartphones, etc.. mais aussi d'appareils de plus en plus de petit comme des étiquettes ou puces RFID, des capteurs et d’autres appareils qui n’ont pas forcément les capacités d’accueillir les moyens d’adressage classique par IP. Nous avons pour cela étudier différents protocoles de communications possibles pour ces appareils. La Figure 3 illustre les protocoles de communication que nous avons choisi pour notre solution IoT de Smart Health.
+L’internet des objets est étroitement lié à Internet, les réseaux de communications mobiles et les capteurs sans fil réseau. L’IoT est un réseau qui interconnecte des objets physiques avec des adresses identifiables pour fournir un service supplémentaire. Il n’est pas seulement constitué d’ordinateurs, de smartphones, etc.. mais aussi d'appareils de plus en plus petits comme des étiquettes ou puces RFID, des capteurs et d’autres appareils qui n’ont pas forcément les capacités d’accueillir les moyens d’adressage classique par IP. Nous avons pour cela étudier différents protocoles de communication possibles pour ces appareils. La Figure 3 illustre les protocoles de communication que nous avons choisi pour notre solution IoT de Smart Health.
 \\
 \begin{figure}[h!]
 	\hspace*{-1cm}
 	\centering
-	\includegraphics[width=1.1\textwidth]{Figure3.png}
+	\includegraphics[width=1.14\textwidth]{Figure3.png}
 	\caption{Protocoles de Communication et Réseaux de notre Système}
 	\label{fig:balance}
 \end{figure}
 
-Nous avons commencé par l’évaluation de différents protocoles physiques de communication, correspondant aux couches 1 (physique) et 2 (liaison) du modèle standard OSI. Les tableaux 1, 2, et 3 résument les caractéristiques de ces protocoles (et propose une comparaison de ceux-ci) pour les différentes couches (réseau, application, et physique).
+Nous avons commencé par l’évaluation de différents protocoles physiques de communication, correspondant aux couches 1 (physique) et 2 (liaison) du modèle standard OSI. Les tableaux 1, 2, et 3 \cite{Physique} \cite{catarinucci2015iot} résument les caractéristiques de ces protocoles (et propose une comparaison de ceux-ci) pour les différentes couches (réseau, application, et physique).
 
-\begin{table}[]
+\begin{table}[h!]
 	\centering
 	\hspace*{-3.5cm}
 	\begin{tabular}{|l|l|l|}
@@ -157,7 +157,7 @@ Nous avons commencé par l’évaluation de différents protocoles physiques de 
 	\caption{Protocoles pour la Couche Réseau}
 \end{table}
 
-\begin{table}[]
+\begin{table}[h!]
 	\centering
 	\hspace*{-3cm}
 	\begin{tabular}{|l|l|l|}
@@ -170,7 +170,7 @@ Nous avons commencé par l’évaluation de différents protocoles physiques de 
 	\caption{Protocoles de Communication pour la Couche Application}
 \end{table}
 
-\begin{table}[]
+\begin{table}[h!]
 	\centering
 	\hspace*{-2.5cm}
 	\begin{tabular}{|l|l|l|l|l|}
@@ -188,21 +188,21 @@ Nous avons commencé par l’évaluation de différents protocoles physiques de 
 
 L’utilisation de nombreux capteurs, sur un patient susceptible de bouger à la fois dans son lit voire dans la pièce impose l’utilisation de protocoles sans fils, pour que la mobilité de la personne soit prise en compte. Les différents protocoles sans fil existants sont décrits ci-dessous.
 
-Le WiFi (Wireless Fidelity), normalisé sous la forme IEEE 802.11 permet la communication sans fil des différents composants dans des réseaux ad-hocs ou plus centralisés, suivant le protocole IP. Cependant, le WiFi soulève un certain nombre de problèmes, le plus important étant l'utilisation des ressources énergétiques pour la transmission, qui n’est pas supportable pour de petits capteurs.
+Le WiFi (Wireless Fidelity) \cite{Wifi}, normalisé sous la forme IEEE 802.11 permet la communication sans fil des différents composants dans des réseaux ad-hocs ou plus centralisés, suivant le protocole IP. Cependant, le WiFi soulève un certain nombre de problèmes, le plus important étant l'utilisation des ressources énergétiques pour la transmission, qui n’est pas supportable pour de petits capteurs.
 
-Le Bluetooth, normalisé IEEE 802.15.1, est également un protocole de communication sans fil possible, mais présente certains inconvénients majeurs : la dépense énergétique associée à la transmission est assez importante, et donc peu supportable pour de petits capteurs, et ses limitations intrinsèques (un périphérique maître Bluetooth ne peut avoir que 7 périphériques esclaves) ne lui donnent pas la propriété de scalabilité recherchée dans l'IoT, où le nombre de capteurs peut augmenter fortement. Cette procédé de communication n'a donc pas été retenu dans notre architecture.
+Le Bluetooth \cite{Bluetooth}, normalisé IEEE 802.15.1, est également un protocole de communication sans fil possible, mais présente certains inconvénients majeurs : la dépense énergétique associée à la transmission est assez importante, et donc peu supportable pour de petits capteurs, et ses limitations intrinsèques (un périphérique maître Bluetooth ne peut avoir que 7 périphériques esclaves) ne lui donnent pas la propriété de scalabilité recherchée dans l'IoT, où le nombre de capteurs peut augmenter fortement. Cette procédé de communication n'a donc pas été retenu dans notre architecture.
 
 Une fois exclu ces protocoles trop consommateurs en énergie, nous avons conservé trois protocoles sans fil majeurs.
 
-La transmission radio-fréquence (IEEE 802.15.4) est une possibilité, relativement peu coûteuse en énergie, propose un faible débit (de 20 à 250 kbit/s) et un mécanisme d’évitement des collisions lors de la transmission. Par ailleurs, la faible portée des émissions (de 10 à 25 m) est intéressante dans une optique de réseau très localisé (autour du lit du patient) s’appuyant sur un point central. Par ailleurs le protocole IEEE 802.15.4 propose un mécanisme d’allocation automatique d’adresses de 16 ou 64 bits, ce qui est pratique pour offrir une flexibilité d’adressage avec un nombre de capteurs variable.
+La transmission radio-fréquence (IEEE 802.15.4) \cite{1IEEE802.15.4} \cite{2IEEE802.15.4} est une possibilité, relativement peu coûteuse en énergie, propose un faible débit (de 20 à 250 kbit/s) et un mécanisme d’évitement des collisions lors de la transmission. Par ailleurs, la faible portée des émissions (de 10 à 25 m) est intéressante dans une optique de réseau très localisé (autour du lit du patient) s’appuyant sur un point central. Par ailleurs le protocole IEEE 802.15.4 propose un mécanisme d’allocation automatique d’adresses de 16 ou 64 bits, ce qui est pratique pour offrir une flexibilité d’adressage avec un nombre de capteurs variable.
 
-Le Bluetooth Low Energy (BLE) est une variante du Bluetooth offrant des débits raisonnables tout en pouvant fonctionner sur des appareils de faible puissance et avec une faible batterie. Par ailleurs, BLE revient sur certaines limitations du Bluetooth comme le nombre de noeuds pouvant être connectés à un même appareil. Cette limite passe de 7 à lus de 65 000, ce qui laisse une marge appréciable pour des réseaux de capteurs. Un inconvénient à ce système est sa non compatibilité avec des appareils Bluetooth standard.
+Le Bluetooth Low Energy (BLE) \cite{BLE} est une variante du Bluetooth offrant des débits raisonnables tout en pouvant fonctionner sur des appareils de faible puissance et avec une faible batterie. Par ailleurs, BLE revient sur certaines limitations du Bluetooth comme le nombre de noeuds pouvant être connectés à un même appareil. Cette limite passe de 7 à lus de 65 000, ce qui laisse une marge appréciable pour des réseaux de capteurs. Un inconvénient à ce système est sa non compatibilité avec des appareils Bluetooth standard.
 
-RFID est un protocole et un appareil sans fil à faible porté qui peut être ajouté à n’importe quel appareil pour le rendre “intelligent”. On peut alors interagir avec ces objets via un lecteur RFID, qui peut généralement également écrire. L’avantage principal de ce système est que la puce RFID n’a absolument pas besoin d’une source d’énergie. L’énergie nécessaire à la lecture est fournie par les ondes provenant du lecteur.
+RFID est un protocole et un appareil sans fil à faible porté qui peut être ajouté à n’importe quel appareil pour le rendre “intelligent”. On peut alors interagir avec ces objets via un lecteur RFID, qui peut généralement également écrire. L’avantage principal de ce système est que la puce RFID n’a absolument pas besoin d’une source d’énergie. L’énergie nécessaire à la lectRFIDure est fournie par les ondes provenant du lecteur.
 
 Le protocole Zigbee se base sur des ondes radios (norme IEEE 802.15.4), est à basse consommation d’énergie et permet une communication à courte distance, comme Bluetooth mais de manière moins complexe et moins cher.
 
-Enfin, NFC se base sur un mélange entre RFID et BLE. NFC peut être couplé avec un système d’authentification renforcé pour offrir une plus grande sécurité d’accès, tout en permettant la lecture de ses informations comme on pourrait le faire pour une puce RFID classique. Cependant son inconvénient principal est la portée de lecture, qui impliquerait au lecteur d'être très proche, à pas plus de quelques centimètres, de l’appareil comportant la puce NFC.
+Enfin, NFC \cite{NFC} se base sur un mélange entre RFID et BLE. NFC peut être couplé avec un système d’authentification renforcé pour offrir une plus grande sécurité d’accès, tout en permettant la lecture de ses informations comme on pourrait le faire pour une puce RFID classique. Cependant son inconvénient principal est la portée de lecture, qui impliquerait au lecteur d'être très proche, à pas plus de quelques centimètres, de l’appareil comportant la puce NFC.
 \\
 
 En se basant sur ce comparatif, nous avons choisi pour le système de notre Smart Hôpital de ne pas utiliser certains protocoles qui ne nous semblent pas adapter à notre architecture : WiFi et Bluetooth pour des raisons énergétiques, NFC pour des raisons de portée et Zigbee auquel on a préféré BLE pour des raisons d'homogénéité dans notre architecture. Nous avons également choisi, dans un soucis de laisser une bonne diversité de capteurs possibles, que notre système de Smart Hôpital pourrait gérer différents protocoles parmi les plus répandus : IEEE 802.15.4 (radio), BLE et RFID, qui sont tous les trois prometteurs vis-à-vis des restrictions des capteurs, tout en offrant un certain nombre de mécanismes de sécurité (particulièrement BLE).
@@ -210,20 +210,20 @@ En se basant sur ce comparatif, nous avons choisi pour le système de notre Smar
 
 Après avoir étudié les protocoles physiques, intéressons nous aux protocoles de la couche 3.
 
-Le protocole classique de la couche 3 est bien entendu le protocole IP. IPv4 n’est pas envisageable pour l’IoT, en raison du manque d’adresses disponibles par rapport à la quantité croissante d’objets à connecter, et donc à adresser. IPv6, résout ce problème, avec un nombre d’adresses virtuellement illimité, et représente un protocole éprouvé et adapté à de nouvelles problématiques. Cependant, les besoins d’IPv6 en calcul et en stockage, notamment du fait de ses différents entêtes le rend inutilisable en tant que tel sur de nombreux capteurs.
+Le protocole classique de la couche 3 est bien entendu le protocole IP. IPv4 n’est pas envisageable pour l’IoT, en raison du manque d’adresses disponibles par rapport à la quantité croissante d’objets à connecter, et donc à adresser. IPv6 \cite{jara2013internet} résout ce problème, avec un nombre d’adresses virtuellement illimité, et représente un protocole éprouvé et adapté à de nouvelles problématiques. Cependant, les besoins d’IPv6 en calcul et en stockage, notamment du fait de ses différents entêtes le rend inutilisable en tant que tel sur de nombreux capteurs.
 
-Face à l’IPv6 classique, une alternative a été développée afin de tenir compte de ressources limitées des différents capteurs utilisés sur IoT, mais également des possibilités de transmission limitées de certains protocoles, comme IEEE 802.15.4 dont les trames sont beaucoup plus petites que celles d’IPv6. Cette alternative est 6LoWPAN (IPv6 over Low-Power Wireless Personal Area Network), un protocole venant au dessus d’IEEE 802.15.4 consistant en une simplification d’IPv6 par la diminution des entêtes nécessaires (toutes celles pouvant être déduites par le contexte ne sont pas transmises), et une meilleure gestion de la fragmentation des trames IPv6 par les protocoles de la couche inférieure. Ceci le rend utilisable sur des capteurs qui ne pourraient pas autrement utiliser IPv6. Par ailleurs, la diminution du stockage et du calcul nécessaire entraîne également une baisse du coût énergétique de transmission du paquet. Compte tenu de l’utilisation que nous avons prévu des émetteurs et récepteurs radio (IEEE 802.15.4), nous avons retenu ce protocole comme protocole de couche 3.
+Face à l’IPv6 classique, une alternative a été développée afin de tenir compte de ressources limitées des différents capteurs utilisés sur IoT, mais également des possibilités de transmission limitées de certains protocoles, comme IEEE 802.15.4 dont les trames sont beaucoup plus petites que celles d’IPv6. Cette alternative est 6LoWPAN (IPv6 over Low-Power Wireless Personal Area Network) \cite{6LoWPAN}, un protocole venant au dessus d’IEEE 802.15.4 consistant en une simplification d’IPv6 par la diminution des entêtes nécessaires (toutes celles pouvant être déduites par le contexte ne sont pas transmises), et une meilleure gestion de la fragmentation des trames IPv6 par les protocoles de la couche inférieure. Ceci le rend utilisable sur des capteurs qui ne pourraient pas autrement utiliser IPv6. Par ailleurs, la diminution du stockage et du calcul nécessaire entraîne également une baisse du coût énergétique de transmission du paquet. Compte tenu de l’utilisation que nous avons prévu des émetteurs et récepteurs radio (IEEE 802.15.4), nous avons retenu ce protocole comme protocole de couche 3.
 \\
 
 Enfin, le système que nous concevons est destiné à fonctionner grâce à des applications à la fois pour téléphones ou tablettes, sur des serveurs ou des agrégateurs. Nous aurons donc besoin de prendre en compte la communication au niveau applicatif, c’est à dire la couche 7 du modèle OSI, et de choisir de façon adéquate les protocoles applicatifs utilisés afin de simplifier le travail de développement des applications.
 
 Dans notre recherche dans la littérature académique sur IoT, un certain nombre de protocoles ont été proposés. Nous nous intéresserons ici à trois protocoles particuliers, XMPP, MQTT et enfin Constraint Application Protocol (CoAP).
 
-XMPP est un protocole ouvert permettant l’échange de messages. Présenté comme un protocole phare de l’IoT, il permet un adressage simple des capteurs, via une adresse proche des adresses mail. Une de ses forces est la présence d’un mécanisme de type “Publish-Subscribe”, c’est-à-dire un mécanisme où une application intéressée s’enregistre (subscribe) auprès du capteur (publisher) afin d’être notifiée lorsque la valeur du capteur évolue. Ceci permet de limiter la bande passante utilisée, par rapport à un envoi périodique des informations. Un de ses inconvénients est sa faible utilisation dans des exemples concrets de systèmes ce qui nous ne permet de vérifier sa fiabilité en situation réelle.
+XMPP \cite{kirsche2012unify} est un protocole ouvert permettant l’échange de messages. Présenté comme un protocole phare de l’IoT, il permet un adressage simple des capteurs, via une adresse proche des adresses mail. Une de ses forces est la présence d’un mécanisme de type “Publish-Subscribe”, c’est-à-dire un mécanisme où une application intéressée s’enregistre (subscribe) auprès du capteur (publisher) afin d’être notifiée lorsque la valeur du capteur évolue. Ceci permet de limiter la bande passante utilisée, par rapport à un envoi périodique des informations. Un de ses inconvénients est sa faible utilisation dans des exemples concrets de systèmes ce qui nous ne permet de vérifier sa fiabilité en situation réelle.
 
-MQTT (Message Queue Telemetry Transport) est un autre protocole applicatif offrant un mécanisme de type publish-subscribe. Il gère également la communication Machine to Machine, mais est là aussi assez peu présent dans la littérature et dans les systèmes réels.
+MQTT (Message Queue Telemetry Transport) \cite{MQTT} est un autre protocole applicatif offrant un mécanisme de type publish-subscribe. Il gère également la communication Machine to Machine, mais est là aussi assez peu présent dans la littérature et dans les systèmes réels.
 
-Constraint Application Protocol (CoAP) est un protocole applicatif qui possède de nombreux points communs avec HTTP, bien qu’étant bien plus léger. En particulier, il supporte l’adressage des capteurs et appareils par une adresse de type URI, et il fonctionne sur un système de requêtes/réponses, supportant comme HTTP quatre méthodes de requêtes : GET, PUT, POST et DELETE. Ces deux caractéristiques facilitent l’utilisation d’API de type REST (fréquentes dans les applications mobiles), et la traduction de HTTP vers CoAP et inversement. De plus, CoAP permet de préciser un type de données transmis, comme le type MIME avec HTTP, ce qui facilite la connaissance du contexte et améliore la sémantique des données transmises. Enfin, CoAP est peu exigeant en capacité de stockage et en énergie, efficace grâce à des entêtes réduites (meilleur ratio de charge utile), et, pouvant s’appuyer sur UDP et DTLS, ce qui permet une sécurisation des données.
+Constraint Application Protocol (CoAP) \cite{CoAP} est un protocole applicatif qui possède de nombreux points communs avec HTTP, bien qu’étant bien plus léger. En particulier, il supporte l’adressage des capteurs et appareils par une adresse de type URI, et il fonctionne sur un système de requêtes/réponses, supportant comme HTTP quatre méthodes de requêtes : GET, PUT, POST et DELETE. Ces deux caractéristiques facilitent l’utilisation d’API de type REST (fréquentes dans les applications mobiles), et la traduction de HTTP vers CoAP et inversement. De plus, CoAP permet de préciser un type de données transmis, comme le type MIME avec HTTP, ce qui facilite la connaissance du contexte et améliore la sémantique des données transmises. Enfin, CoAP est peu exigeant en capacité de stockage et en énergie, efficace grâce à des entêtes réduites (meilleur ratio de charge utile), et, pouvant s’appuyer sur UDP et DTLS, ce qui permet une sécurisation des données.
 
 Compte tenus de ces avantages, et la possibilité que nous souhaitons fournir aux médecins et au personnel hospitalier de voir les différentes informations fournis par les capteurs à travers des applications, nous avons donc choisi CoAP pour la communication applicative avec nos capteurs.
 
@@ -254,8 +254,6 @@ Le protocole TLS (Transportation Layer Security) utilisé pour sécuriser une co
 
 Concernant la QoS, une première mesure afin d’améliorer la disponibilité et donc de permettre aux médecins d’être notifiés rapidement en cas de variations anormales, serait de connecter les moniteurs via ethernet au réseau de l’hôpital. Cela permettrait une plus grande capacité et limiterait le nombre d’interférences. Par ailleurs, une telle méthode permettrait de ne pas causer de dysfonctionnement avec d’autres appareils sensibles comme un scanner. Une autre mesure serait l’utilisation d’UDP (ou d’un protocole équivalent) pour l’envoie de données fréquentes à la smart gateway depuis le moniteur. Par données fréquentes, nous entendons des données qui sont fréquemment mises à jour. Ainsi, pour de telles données, la perte de quelques paquets n’est pas pénalisante. En effet, un nouveau paquet sera envoyé avec une nouvelle mesure peu de temps après. En revanche, pour les mesures prises de façon plus rares, il est nécessaire d’avoir un mécanisme d’accusé réception afin de ne pas perdre de données.
 
-Enfin, le système doit être disponible et fiable. Dès qu’une mesure anormale est détectée, il faut connaître la raison de cette anomalie, si cela vient de l'appareil il faut que celui-ci soit vérifié et changé si besoin est. Pour cela, on pourrait s’appuyer sur la fabrication de l'appareil qui intégrera certains cas de défaillance et un technicien pourra être envoyé pour vérifier les capteurs pour des valeurs non conforme. Pour les autres anomalies détectées, un membre du personnel médical sera envoyé sur place. Ce serait alors à lui de vérifier que les données sont bien reliées au patient et non une erreur du dispositif, un technicien le cas échéant. Par ailleurs, il est nécessaire de mettre un place un timeout afin de lancer une alerte en l’absence de données durant un certain laps de temps. Selon les informations que caractérisent ces données l’alerte ne sera pas la même. En effet, le dysfonctionnement d’un capteur selon ce qu’il mesure (fréquence cardique, température de la salle) n’a pas le même impact. Aussi, il y a une hiérarchisation du signal envoyé (alerte, avertissement, notification) selon la gravité de la panne afin que les pannes les plus graves soient traitées en premier. Cette hiérarchisation est illustrée sur la Figure 4.
-
 \begin{figure}[h!]
 	\hspace*{-2.5cm}
 	\centering
@@ -264,6 +262,7 @@ Enfin, le système doit être disponible et fiable. Dès qu’une mesure anormal
 	\label{fig:balance}
 \end{figure}
 
+Enfin, le système doit être disponible et fiable. Dès qu’une mesure anormale est détectée, il faut connaître la raison de cette anomalie, si cela vient de l'appareil il faut que celui-ci soit vérifié et changé si besoin est. Pour cela, on pourrait s’appuyer sur la fabrication de l'appareil qui intégrera certains cas de défaillance et un technicien pourra être envoyé pour vérifier les capteurs pour des valeurs non conforme. Pour les autres anomalies détectées, un membre du personnel médical sera envoyé sur place. Ce serait alors à lui de vérifier que les données sont bien reliées au patient et non une erreur du dispositif, un technicien le cas échéant. Par ailleurs, il est nécessaire de mettre un place un timeout afin de lancer une alerte en l’absence de données durant un certain laps de temps. Selon les informations que caractérisent ces données l’alerte ne sera pas la même. En effet, le dysfonctionnement d’un capteur selon ce qu’il mesure (fréquence cardique, température de la salle) n’a pas le même impact. Aussi, il y a une hiérarchisation du signal envoyé (alerte, avertissement, notification) selon la gravité de la panne afin que les pannes les plus graves soient traitées en premier. Cette hiérarchisation est illustrée sur la Figure 4.
 
 \section{ Conclusion }
  
