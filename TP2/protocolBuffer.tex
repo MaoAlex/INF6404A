@@ -1,0 +1,36 @@
+Dans l'Internet des objets, tout comme dans tout système réparti, une communication entre les différentes composantes est
+nécessaire. Or les données issues de divers senseurs seront probablement sous des formats variés. Il est donc obligatoire de
+traduire ces données sous un autre format, qui serait le format de référence pour le reste de l'application. Cette traduction
+serait à la charge du middleware afin de fournir un modèle uniforme aux futurs développeurs. Cette considération reste vraie
+quel que soit l'endroit (moniteur, smartgateway) où le middleware sera déployé: la smartgateway devra récupérer des données sur le
+patient depuis le cloud et les transmettre au médecin. Cette transmission nécessitera un format. De plus, il serait souhaitable
+que des mécanismes soient déjà implémentés afin de générer des classes (ou tout autre abstraction utile pour le programmeur) afin
+que le dit programmeur puisse directement manier ces classes sans avoir de la lecture et de l'écriture au sein de ce format.
+\newline
+
+De plus, ce format devrait être le plus léger possible. En effet, il conditionne l'apparence de ce qui circulera sur le
+réseau. De ce fait, un format trop verbeux ralentirait la propagation des données et pourrait éventuellement être source de
+congestion. Toutefois, ce format doit aussi être extensible. On veut pouvoir ajouter de nouvelles données si on introduit un
+nouveau capteur par exemple. Enfin, ce format doit être indépendant de la plateforme ou du langage utilisé.  
+\newline
+
+Pour un tel format, notre choix s'est porté pour le \textit{protocol buffer}. En effet, il remplit tous les requis spécifiés
+ci-dessus, mais a de plus des propriétés non négligeable. En particulier, ce format binaire est compatible vers l'avant et vers
+l'arrière et peut traiter des messages même s'ils contiennent des champs inconnus. Cette particularité permet de faire cohabiter
+différentes version d'un même logiciel. Or le problème de la mise à jour dans les grands est un problème compliqué. De plus, dans
+le cadre d'un hôpital, il est impensable d'arrêter tous les systèmes pour procéder à une mise à jour globale. Cette mise à jour
+sera donc incrémentielle. Or, il est tout aussi impensable que deux machines n'ayant pas la même version de logiciel ne puissent
+pas échanger de message. 
+\newline
+
+Pour présenter de façon succincte le \textit{protocol buffer}, on pourra dire que c'est un format développé par \textit{Google}
+avec lequel chaque message est composé de clés, types et valeurs.a Où la clé est le numéro du champ dans la spécification.
+
+Notons que lorsqu'on parle de différentes versions, il faut, pour que la compatibilité arrière soit assurée, que les anciens
+champs du message ne soit pas supprimés. En revanche, l'introduction de nouveaux champs ne posera pas de problème si les protocol
+buffer sont utilisés. (Les champs inconnus seraient simplement ignorés).
+\newline
+
+Par ailleurs, la taille des messages envoyés est particulièrement optimisée. Nous avons déjà dit qu'il s'agissait d'un format
+binaire, mais nous avions omis de préciser que les entiers (taille, poids, âge) sont transmis via des \textit{varint}.
+C'est-à-dire des entiers de tailles variables: plus l'entier est petit moins il prend de place.
