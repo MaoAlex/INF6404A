@@ -27,69 +27,66 @@ est souhaitable que, de part l'importance des données fournies par ces capteurs
 de dysfonctionnement. De manière générale, il est important de garantir une bonne disponibilité ainsi qu'une certaine fiabilité.
 
 \begin{table}[h!]
+	\hspace*{-4.5cm}
     \centering
-    \resizebox{\paperwidth}{!}{  
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        Modules & découverte ressources & scalabilité & interopérabilité & adaptabilité & fiabilité & disponibilité &  temps
-        réel & basé sur les services &  context aware & autonome\\
+        Modules & \begin{tabular}[c]{@{}l@{}} Découverte \\ ressources \end{tabular} & Scalabilité & \begin{tabular}[c]{@{}l@{}} Interopéra- \\ -bilité \end{tabular} & \begin{tabular}[c]{@{}l@{}} Adapta- \\ -bilité \end{tabular} & Fiabilité & \begin{tabular}[c]{@{}l@{}} Disponi- \\ -bilité \end{tabular} &  \begin{tabular}[c]{@{}l@{}} Temps \\
+        réel \end{tabular} & \begin{tabular}[c]{@{}l@{}} Basé \\ sur les \\ services \end{tabular} &  \begin{tabular}[c]{@{}l@{}} Context \\ aware \end{tabular} & Autonome\\
         \hline
         \hline
-        découverte des ressources & \checkmark & \checkmark & & \checkmark & & & & &&\\
+        \begin{tabular}[c]{@{}l@{}}Découverte \\ des \\ ressources \end{tabular} & \checkmark & \checkmark & & \checkmark & & & & &&\\
         \hline
-        détection panne & & & & & \checkmark & \checkmark & \checkmark &  \checkmark && \\
+        \begin{tabular}[c]{@{}l@{}}Détection \\ panne \end{tabular} & & & & & \checkmark & \checkmark & \checkmark &  \checkmark && \\
         \hline
-        décision & & \checkmark & & \checkmark & \checkmark & \checkmark & & & & \checkmark \\
+        Décision & & \checkmark & & \checkmark & \checkmark & \checkmark & & & & \checkmark \\
         \hline
-        Gestion du contexte & & & && & &&& & \checkmark \\
+        \begin{tabular}[c]{@{}l@{}}Gestion \\ du \\ contexte \end{tabular} & & & && & &&& & \checkmark \\
         \hline
-        émission d'événements & & & \checkmark & \checkmark & & \checkmark & & & \checkmark & \\
+        \begin{tabular}[c]{@{}l@{}}Émission \\ d'événements \end{tabular} & & & \checkmark & \checkmark & & \checkmark & & & \checkmark & \\
         \hline
-        gestion des différents protocoles physiques & & \checkmark & && & & & & & \\
+        \begin{tabular}[c]{@{}l@{}}Gestion des \\ différents \\ protocoles \\ physiques \end{tabular} & & \checkmark & && & & & & & \\
         \hline
-        nommage des capteurs & & \checkmark & \checkmark & \checkmark && & & & & \\
+        \begin{tabular}[c]{@{}l@{}}Nommage \\ des capteurs \end{tabular} & & \checkmark & \checkmark & \checkmark && & & & & \\
         \hline
-        agrégation de données et centralisation & & \checkmark & \checkmark & \checkmark & & & & & & \\
+        \begin{tabular}[c]{@{}l@{}} Agrégation \\ de données et \\ centralisation  \end{tabular} & & \checkmark & \checkmark & \checkmark & & & & & & \\
         \hline
-        gestion des différents protocoles applicatifs & & \checkmark & \checkmark & \checkmark & & & & & &\\
+        \begin{tabular}[c]{@{}l@{}} Gestion des \\ différents \\ protocoles \\ applicatifs \end{tabular} & & \checkmark & \checkmark & \checkmark & & & & & &\\
         \hline
     \end{tabular}
-    }
     \caption{Utilisation des services du middleware par les différents modules}
-    \label{tab:monitor_middleware}
 \end{table}
 
 \begin{table}[h!]
+	\hspace*{-4cm}
     \centering
-    \resizebox{\textwidth}{!}{  
-    \begin{tabular}{|c|c|c|c|c|}
+    \begin{tabular}{|l|c|c|c|c|}
         \hline
-        Modules & gestion ressources & gestion données & gestion événements & gestion du code \\
+        Modules & Gestion ressources & Gestion données & Gestion événements & Gestion du code \\
         \hline
         \hline
-        découverte des ressources & \checkmark & & & \\
+        Découverte des ressources & \checkmark & & & \\
         \hline
-        détection panne & \checkmark & & & \\
+        Détection panne & \checkmark & & & \\
         \hline
-        décision & & & &\\
+        Décision & & & &\\
         \hline
         Gestion du contexte & & \checkmark & \checkmark & \\
         \hline
-        émission d'événements & & \checkmark & \checkmark & \\
+        Émission d'événements & & \checkmark & \checkmark & \\
         \hline
-        gestion des différents protocoles physiques & & & & \checkmark \\
+        Gestion des différents protocoles physiques & & & & \checkmark \\
         \hline
-        nommage des capteurs & \checkmark & & & \\
+        Nommage des capteurs & \checkmark & & & \\
         \hline
-        agrégation de données et centralisation & & \checkmark & & \\
+        Agrégation de données et centralisation & & \checkmark & & \\
         \hline
-        gestion des différents protocoles applicatifs & & & & \checkmark \\
+        Gestion des différents protocoles applicatifs & & & & \checkmark \\
         \hline
     \end{tabular}
-    }
     \caption{Utilisation des services de gestion du middleware par les différents modules}
-    \label{tab:monitor_middleware_gestion}
 \end{table}
+
 Les tableaux \ref{tab:monitor_middleware} et \ref{tab:monitor_middleware_gestion} présentent les modules sur la première colonne avec les exigences du middleware sur la
 première ligne.
 \newline
