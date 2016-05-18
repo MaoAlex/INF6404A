@@ -8,10 +8,10 @@ Dans cette partie, nous allons nous intéresser au middleware présent au niveau
 	\label{4}
 \end{figure}
 
-Ce requis impose de pouvoir comprendre différents protocoles, tant au niveau physique que applicatif, ainsi que différents formats. Il est en effet peu probable que tous les capteurs utilisent le même protocole pour leurs données sous un même format. Il est également nécessaire de permettre l'évolutivité au sein du système afin que de futurs capteurs plus performants, mais utilisant une nouvelle façon de communiquer, puissent être intégrés au système.
+Ce requis impose de pouvoir comprendre différents protocoles, tant au niveau physique que applicatif, ainsi que différents formats. Il est en effet peu probable que tous les capteurs utilisent le même protocole pour leurs données sous un même format. Il est également nécessaire de permettre l'évolutivité au sein du système afin que de futurs capteurs plus performants, mais utilisant une nouvelle façon de communiquer, puissent être intégrés au système. Ceci sera géré par les modules de \textbf{\textit{gestion des différents protocoles physiques}} et \textbf{\textit{gestion des protocoles applicatifs}}.
 \newline
 
-De plus, afin d'optimiser le temps du personnel médical, il est souhaitable que le moniteur et donc le middleware facilite la découverte de capteurs ainsi que la récupération de leur contexte. Dans le TP1 nous avons évoqué la transmission de données depuis les capteurs. Pour que ces données aient une réelle signification, il faut que notre système soit conscient du type des données et des unités dans lesquelles ces données sont exprimées. Lorsqu’un capteur est rajouté au réseau des capteurs, c’est à dire qu’il s’enregistre auprès du moniteur intelligent, le capteur envoie ses propriétés, c’est à dire le type de données et l’unité associée. Le moniteur peut ainsi stocker dans sa table de correspondance le protocole physique, le canal de communication, le type de données et l’unité associée, ainsi que le nom que le moniteur intelligent attribue au capteur qui vient de s’enregistrer. Ce nom est transmis au capteur qui peut alors le retenir. Ce faisant, le moniteur est conscient, pour les données qu’il reçoit, de leur sémantique et des unités associées. Lors de l’agrégation des données et avant leur envoi à la Smart Gateway, le moniteur intelligent peut associer pour chaque type de données récupérées les unités associées dans un ou plusieurs paquets IPv4/IPv6 envoyés à la Smart Gateway. Ce processus est illustré par la Figure \ref{5}.
+De plus, afin d'optimiser le temps du personnel médical, il est souhaitable que le moniteur et donc le middleware facilite la découverte de capteurs ainsi que la récupération de leur contexte, ce qui sera rendu possible par le module de \textbf{\textit{découverte des ressources}}. Dans le TP1 nous avons évoqué la transmission de données depuis les capteurs. Pour que ces données aient une réelle signification, il faut que notre système soit conscient du type des données et des unités dans lesquelles ces données sont exprimées. Lorsqu’un capteur est rajouté au réseau des capteurs, c’est à dire qu’il s’enregistre auprès du moniteur intelligent, le capteur envoie ses propriétés, c’est à dire le type de données et l’unité associée. Le moniteur peut ainsi stocker dans sa table de correspondance le protocole physique, le canal de communication, le type de données et l’unité associée, ainsi que le nom que le moniteur intelligent attribue au capteur qui vient de s’enregistrer. Ce nom est transmis au capteur qui peut alors le retenir. Ce faisant, le moniteur est conscient, pour les données qu’il reçoit, de leur sémantique et des unités associées. Lors de l’agrégation des données et avant leur envoi à la Smart Gateway, le moniteur intelligent peut associer pour chaque type de données récupérées les unités associées dans un ou plusieurs paquets IPv4/IPv6 envoyés à la Smart Gateway. Ce processus est illustré par la Figure \ref{5}.
 \newline
 \begin{figure}[h!]
 	\hspace*{-3cm}
@@ -21,13 +21,19 @@ De plus, afin d'optimiser le temps du personnel médical, il est souhaitable que
 	\label{5}
 \end{figure}
 
-Une fois les capteurs installés et découverts, le lien entre les données reçues et l'identité du patient devrait être fait automatiquement (ou presque). Ces mêmes capteurs devraient être accessibles depuis l'extérieur. En effet, pour certaines données relevées rarement, il est possible qu'un médecin souhaite les rafraîchir plutôt que d'attendre la prochaine mise à jour. Il se peut également que le médecin désir donner un ordre à un des objets intelligents. Pour cela, il faut que ces objets aient un nom, ou du moins soient adressables. En particulier, un nom du type \textit{idPatient@typeDeCapteur} serait particulièrement pratique à utiliser.
+Une fois les capteurs installés et découverts, le lien entre les données reçues, leurs unités et l'identité du patient devrait être fait automatiquement (ou presque), ce qu'assurera le module de \textbf{\textit{gestion du contexte}}. Cette étape intervient lorsque les données sont agrégées et préparées pour leur transmission par le module d'\textbf{\textit{agrégation des données}}.
+
+Ces mêmes capteurs devraient être accessibles depuis l'extérieur. En effet, pour certaines données relevées rarement, il est possible qu'un médecin souhaite les rafraîchir plutôt que d'attendre la prochaine mise à jour. Il se peut également que le médecin, ou un outil automatique tel que le moniteur central, désire donner un ordre à un des objets intelligents. Pour cela, il faut que ces objets aient un nom, ou du moins soient adressables. En particulier, un nom du type \textit{idPatient@typeDeCapteur} serait particulièrement pratique à utiliser. Le module de \textbf{\textit{nommage des capteurs}} répondra à ce problème. De plus, il peut être nécessaire, dans le cas de décisions automatisées (par exemple la régulation d'un débit de perfusion, ...), que le middleware comprenne un \textbf{\textit{module de décision}} pour lequel des règles pourraient être définie afin qu'il actionne des objets connectés présents dans l'environnement du patient.
 \newline
 
 Enfin, il est impératif, dans la mesure du possible, de sécuriser les communications au sein du système. Cela passe par un
-contrôle d'accès au niveau du moniteur avec un mécanisme d'authentification. Mais aussi par une détection des pannes. En effet, il
+contrôle d'accès au niveau du moniteur avec un mécanisme d'authentification. Mais aussi par une \textbf{\textit{détection des pannes}}, dont un module s'occupe. En effet, il
 est souhaitable que, de part l'importance des données fournies par ces capteurs, ils doivent être remplacés dès le premier indice
 de dysfonctionnement. De manière générale, il est important de garantir une bonne disponibilité ainsi qu'une certaine fiabilité.
+\newline
+
+Ces considérations sur la détection de pannes entrainent également la nécessité de disposer d'un module d'\textbf{\textit{émission d'évènements}} afin que le middleware du moniteur intelligent puisse avertir immédiatement la Smart Gateway d'un dysfonctionnement d'un capteur, ou d'une valeur anormale par rapport au profil du patient (par exemple une crise cardiaque).
+\newline
 
 \begin{table}[h!]
 	\hspace*{-4.5cm}
@@ -93,4 +99,4 @@ de dysfonctionnement. De manière générale, il est important de garantir une b
 Les tableaux 1 et 2 présentent les modules sur la première colonne avec les exigences du middleware sur la première ligne.
 \newline
 
-Par ailleurs, il serait aussi nécessaire de présenter une API simple d'utilisation au niveau du middleware afin de faciliter la programmation de nouvelles fonctionnalité.
+Par ailleurs, il serait aussi nécessaire de présenter une API simple d'utilisation au niveau du middleware afin de faciliter la programmation de nouvelles fonctionnalités et l'utilisation des services offerts par des applications extérieures.
