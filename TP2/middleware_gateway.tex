@@ -1,5 +1,12 @@
-La smart Gateway présente un rôle central dans notre architecture, c’est elle qui va faire l’intermédiaire entre les parties plus bas niveau comprenant les dispositifs et le middleware s’occupant de gérer ces dispositifs, et la partie supérieure qui correspond au reste de l’application avec le stockage des données, et les différentes applications.
+La smart Gateway présente un rôle central dans notre architecture, c’est elle qui va faire l’intermédiaire entre les parties plus bas niveau comprenant les dispositifs et le middleware s’occupant de gérer ces dispositifs, et la partie supérieure qui correspond au reste de l’application avec le stockage des données, et les différentes applications. La Figure \ref{gateway} illustre le middleware que nous avons adopté au niveau du Gateway.
 \newline
+\begin{figure}[h!]
+	\hspace*{-3cm}
+	\centering
+	\includegraphics[width=1.5\textwidth]{Figure6.png}
+	\caption{Middleware au niveau du Gateway}
+	\label{gateway}
+\end{figure}
 
 Dans notre cas, elle va avoir différents modules pour répondre aux exigences du système. Elle aura un rôle primordial dans la transmission en temps réel des alertes depuis les couches inférieures, pour cela, un module autonome de gestion et d’émission des alertes sera présent pour pouvoir recevoir et réémettre aux bons destinataires ou aux bonnes applications les alertes, ce module pourra être couplé avec un module de localisation du personnel médical et du patient, pour que l’alerte soit déclenchée dans la zone proche du patient et qu’elle atteigne le personnel médicale compétent pour agir sur cette urgence tout en leur signalant la localisation de l’urgence. Ce module aura besoin d’être fiable et disponible dans la gestion des événements qu’elle reçoit car ceux-ci peuvent être des alertes vitales sur des patients.
 
