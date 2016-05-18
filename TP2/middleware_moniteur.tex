@@ -10,7 +10,10 @@ utilisant une nouvelle façon de communiquer, puissent être intégrés au syst�
 \newline
 
 De plus, afin d'optimiser le temps du personnel médical, il est souhaitable que le moniteur et donc le middleware facilite la
-découverte de capteurs ainsi que la récupération de leur contexte. Une fois les capteurs installés, le lien entre les données
+découverte de capteurs ainsi que la récupération de leur contexte. Dans le TP1 nous avons évoqué la transmission de données depuis les capteurs. Pour que ces données aient une réelle signification, il faut que notre système soit conscient du type des données et des unités dans lesquelles ces données sont exprimées. Lorsqu’un capteur est rajouté au réseau des capteurs, c’est à dire qu’il s’enregistre auprès du moniteur intelligent, le capteur envoie ses propriétés, c’est à dire le type de données et l’unité associée. Le moniteur peut ainsi stocker dans sa table de correspondance le protocole physique, le canal de communication, le type de données et l’unité associée, ainsi que le nom que le moniteur intelligent attribue au capteur qui vient de s’enregistrer. Ce nom est transmis au capteur qui peut alors le retenir. Ce faisant, le moniteur est conscient, pour les données qu’il reçoit, de leur sémantique et des unités associées. Lors de l’agrégation des données et avant leur envoi à la Smart Gateway, le moniteur intelligent peut associer pour chaque type de données récupérées les unités associées dans un ou plusieurs paquets IPv4/IPv6 envoyés à la Smart Gateway.
+\newline
+
+Une fois les capteurs installés et découverts, le lien entre les données
 reçues et l'identité du patient devrait être fait automatiquement (ou presque). Ces mêmes capteurs devraient être accessibles
 depuis l'extérieur. En effet, pour certaines données relevées rarement, il est possible qu'un médecin souhaite les rafraîchir
 plutôt que d'attendre la prochaine mise à jour. Il se peut également que le médecin désir donner un ordre à un des objets
