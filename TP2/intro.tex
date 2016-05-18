@@ -11,20 +11,20 @@ En effet, un middleware fait abstraction de la complexité du système ou du mat
 	\centering
 	\includegraphics[width=1.1\textwidth]{Figure1.png}
 	\caption{Couches Dispositifs, et Protocoles de Réseau et de Communication de notre Système}
-	\label{fig:balance}
+	\label{fig:couches}
 \end{figure}
 
 Rappelons que notre sujet consiste à établir un système IoT dans le domaine Smart Health, et plus précisément dans les services de
-soins intensifs des hôpitaux, afin de résoudre le problèmes de congestion et de surveillance en continu dans ces services. La
-Figure 1 nous permet de visualiser les choix de dispositifs et de protocoles de communication et de réseau que nous avons établis
+soins intensifs des hôpitaux, afin de résoudre le problèmes de congestion et de surveillance en continu dans ces services. La Figure
+\ref{fig:couches} nous permet de visualiser les choix de dispositifs et de protocoles de communication et de réseau que nous avons établis
 dans le rapport précédent. Avant de commencer à décrire les différents modules dont nous aurons besoin dans notre middleware, ce que nous feront dans les section 2, 3, et 4, il est important de préciser le choix que nous avons fait concernant l’architecture générale de notre middleware. En effet, nous avons décidé de diviser notre middleware en deux couches différentes, la première étant liée au moniteur qui centralise toutes les informations des divers dispositifs présents dans la chambre du patient, et qui donc va gérer l’hétérogénéité entre les dispositifs présents dans l’environnement du patient. La seconde couche middleware est liée au Gateway de notre système, qui s’occupe de centraliser les informations de tous les moniteurs (le problème d’hétérogénéité se pose moins ici), et qui va faire le lien entre la couche de stockage et celle de liaison à la couche physique. Cette seconde couche va être celle qui permettra d’identifier les différents groupements de dispositifs à travers la connaissance des différents moniteurs intelligents.
 
-La Figure 2 nous permet de visualiser la structure de notre système en considérant seulement les couches dispositifs, réseaux et communication, middleware, et architecture. Ainsi, dans les trois prochaines sections, notre tâche ne sera pas seulement de décrire les différents modules dont nous avons besoin dans notre middleware, mais aussi de décrire dans quelle(s) couche(s) middleware nous en avons besoin (possiblement les deux).
+La Figure \ref{fig:vueglobale} nous permet de visualiser la structure de notre système en considérant seulement les couches dispositifs, réseaux et communication, middleware, et architecture. Ainsi, dans les trois prochaines sections, notre tâche ne sera pas seulement de décrire les différents modules dont nous avons besoin dans notre middleware, mais aussi de décrire dans quelle(s) couche(s) middleware nous en avons besoin (possiblement les deux).
 
 \begin{figure}[h!]
 	\hspace*{-2.5cm}
 	\centering
 	\includegraphics[width=1.4\textwidth]{Figure2.png}
 	\caption{Vue Globale de notre Middleware au sein de notre Système}
-	\label{fig:balance}
+	\label{fig:vueglobale}
 \end{figure}
