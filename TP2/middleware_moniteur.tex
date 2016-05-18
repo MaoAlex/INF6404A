@@ -1,7 +1,6 @@
 Dans cette partie, nous allons nous intéresser au middleware présent au niveau du moniteur. Afin de contextualiser, nous allons
 rappeler les fonctionnalités principales de ce dernier. Premièrement, il a un rôle d'agrégateur. Il doit donc rassembler les
-données issues de différents capteurs et les envoyer vers la passerelle intelligente via un unique message. Ensuite, lors de
-situations particulières (niveau anormal de glucose, panne, etc), il est de son devoir d'envoyer une alerte. 
+données issues de différents capteurs et les envoyer vers la passerelle intelligente via un unique message. 
 \newline
 
 Ce requis impose de pouvoir comprendre différents protocoles, tant au niveau physique que applicatif, ainsi que différents
@@ -20,14 +19,18 @@ intelligents. Pour cela, il faut que ces objets aient un nom, ou du moins soient
 \newline
 
 Enfin, il est impératif, dans la mesure du possible, de sécuriser les communications au sein du système. Cela passe par un
-contrôle d'accès au niveau du moniteur avec un mécanisme d'authentification.
+contrôle d'accès au niveau du moniteur avec un mécanisme d'authentification. Mais aussi par une détection des pannes. En effet, il
+est souhaitable que, de part l'importance des données fournies par ces capteurs, ils doivent être remplacés dès le premier indice
+de dysfonctionnement. De manière générale, il est important de garantir une bonne disponibilité ainsi qu'une certaine fiabilité.
 
 \begin{table}[h!]
   \centering
     \resizebox{\textwidth}{!}{  
-\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
-& découverte ressources & scalabilité & interopérabilité & adaptabilité & fiabilité & disponibilité & gestion ressources & temps
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Modules & découverte ressources & scalabilité & interopérabilité & adaptabilité & fiabilité & disponibilité & gestion ressources & temps
 réel & basé sur les services & gestion données & gestion événements & context aware & autonome & gestion du code \\
+\hline
 \hline
 découverte des ressources & \checkmark & \checkmark & & \checkmark & & & & & & & & & & \\
 \hline
@@ -46,8 +49,16 @@ nommage des capteurs & & \checkmark & \checkmark & \checkmark & & & \checkmark &
 agrégation de données et centralisation & & \checkmark & \checkmark & \checkmark & & & & & & \checkmark & & & & \\
 \hline
 gestion des différents protocoles applicatifs & & \checkmark & \checkmark & \checkmark & & & & & & & & & & \checkmark \\
+\hline
 \end{tabular}
 }
 \caption{Présentation des exigences du middleware pour les différents modules}
 \label{tab:monitor_middleware}
 \end{table}
+
+Le tableau \ref{tab:monitor_middleware} présente les modules sur la première colonne avec les exigences du middleware sur la
+première ligne.
+\newline
+
+Par ailleurs, il serait aussi nécessaire de présenter une API simple d'utilisation au niveau du middleware afin de faciliter la
+programmation de nouvelles fonctionalité.
