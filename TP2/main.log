@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.17)  17 MAY 2016 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.17)  17 MAY 2016 23:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -1066,15 +1066,14 @@ Overfull \hbox (69.08823pt too wide) in paragraph at lines 21--24
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (fonctionnelle.tex) (nonfonctionnelle.tex) (architecturale.tex)
-(middleware_moniteur.tex) (middleware_gateway.tex) (middleware_secu.tex
-Overfull \hbox (2.47266pt too wide) in paragraph at lines 1--2
-[]\OT1/cmr/m/n/10 La vie privee et la securite sont des preoccupations ma-j
-eures dans les systemes
+) (fonctionnelle.tex) (nonfonctionnelle.tex) (architecturale.tex
+Overfull \hbox (12.66722pt too wide) in paragraph at lines 2--3
+ [] \OT1/cmr/m/n/10 Le midd-le-ware re-quiert la prise en compte d'un cer-tain 
+nombre de problematiques
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
@@ -1082,23 +1081,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
 LaTeX Warning: Text page 3 contains only floats.
 
-[3 <./Figure1.png>]
-Overfull \vbox (79.13309pt too high) has occurred while \output is active []
+[3 <./Figure1.png>] [4 <./Figure2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
 
 
-[4 <./Figure2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[5]) (middleware_recap.tex) (conclusion.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Overfull \hbox (4.52821pt too wide) in paragraph at lines 8--9
+\OT1/cmr/m/n/10 IoT doit ^etre conscient du contexte dans le-quel les donnees,
+ les evenements,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+) (middleware_moniteur.tex) (middleware_gateway.tex) (middleware_secu.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+) (middleware_recap.tex) (conclusion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--3
 
  []
 
-)
+[7])
 No file main.bbl.
-[6] (main.aux)
+[8] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1106,7 +1147,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  23030 strings out of 493622
  577823 string characters out of 3134731
- 745030 words of memory out of 3000000
+ 743030 words of memory out of 3000000
  26007 multiletter control sequences out of 15000+200000
  10979 words of font info for 41 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -1121,9 +1162,9 @@ ers/Fabien/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 17.pfb><C:/Users/Fabien/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti10.pfb><C:/Users/Fabien/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (6 pages, 263275 bytes).
+Output written on main.pdf (8 pages, 270236 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
