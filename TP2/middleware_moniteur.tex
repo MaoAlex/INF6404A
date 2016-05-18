@@ -1,0 +1,64 @@
+Dans cette partie, nous allons nous intéresser au middleware présent au niveau du moniteur. Afin de contextualiser, nous allons
+rappeler les fonctionnalités principales de ce dernier. Premièrement, il a un rôle d'agrégateur. Il doit donc rassembler les
+données issues de différents capteurs et les envoyer vers la passerelle intelligente via un unique message. 
+\newline
+
+Ce requis impose de pouvoir comprendre différents protocoles, tant au niveau physique que applicatif, ainsi que différents
+formats. Il est en effet peu probable que tous les capteurs utilisent le même protocole pour leurs données sous un même format. Il
+est également nécessaire de permettre l'évolutivité au sein du système afin que de futurs capteurs plus performants, mais
+utilisant une nouvelle façon de communiquer, puissent être intégrés au système.
+\newline
+
+De plus, afin d'optimiser le temps du personnel médical, il est souhaitable que le moniteur et donc le middleware facilite la
+découverte de capteurs ainsi que la récupération de leur contexte. Une fois les capteurs installés, le lien entre les données
+reçues et l'identité du patient devrait être fait automatiquement (ou presque). Ces mêmes capteurs devraient être accessibles
+depuis l'extérieur. En effet, pour certaines données relevées rarement, il est possible qu'un médecin souhaite les rafraîchir
+plutôt que d'attendre la prochaine mise à jour. Il se peut également que le médecin désir donner un ordre à un des objets
+intelligents. Pour cela, il faut que ces objets aient un nom, ou du moins soient adressables. En particulier, un nom du type
+\textit{idPatient@typeDeCapteur} serait particulièrement pratique à utiliser.
+\newline
+
+Enfin, il est impératif, dans la mesure du possible, de sécuriser les communications au sein du système. Cela passe par un
+contrôle d'accès au niveau du moniteur avec un mécanisme d'authentification. Mais aussi par une détection des pannes. En effet, il
+est souhaitable que, de part l'importance des données fournies par ces capteurs, ils doivent être remplacés dès le premier indice
+de dysfonctionnement. De manière générale, il est important de garantir une bonne disponibilité ainsi qu'une certaine fiabilité.
+
+\begin{table}[h!]
+  \centering
+    \resizebox{\textwidth}{!}{  
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Modules & découverte ressources & scalabilité & interopérabilité & adaptabilité & fiabilité & disponibilité & gestion ressources & temps
+réel & basé sur les services & gestion données & gestion événements & context aware & autonome & gestion du code \\
+\hline
+\hline
+découverte des ressources & \checkmark & \checkmark & & \checkmark & & & & & & & & & & \\
+\hline
+détection panne & & & & & \checkmark & \checkmark & \checkmark &  \checkmark & \checkmark & & & & & \\
+\hline
+décision & & \checkmark & & \checkmark & \checkmark & \checkmark & & & & & & & \checkmark & \\
+\hline
+Gestion du contexte & & & & & & & & & & \checkmark & \checkmark & \checkmark & & \\
+\hline
+émission d'événements & & & & & \checkmark & \checkmark & & \checkmark & \checkmark & \checkmark & \checkmark & & \checkmark & \\
+\hline
+gestion des différents protocoles physiques & & \checkmark & \checkmark & \checkmark & & & & & & & & & & \checkmark \\
+\hline
+nommage des capteurs & & \checkmark & \checkmark & \checkmark & & & \checkmark & & & & & & & \\
+\hline
+agrégation de données et centralisation & & \checkmark & \checkmark & \checkmark & & & & & & \checkmark & & & & \\
+\hline
+gestion des différents protocoles applicatifs & & \checkmark & \checkmark & \checkmark & & & & & & & & & & \checkmark \\
+\hline
+\end{tabular}
+}
+\caption{Utilisation des services du middleware par les différents modules}
+\label{tab:monitor_middleware}
+\end{table}
+
+Le tableau \ref{tab:monitor_middleware} présente les modules sur la première colonne avec les exigences du middleware sur la
+première ligne.
+\newline
+
+Par ailleurs, il serait aussi nécessaire de présenter une API simple d'utilisation au niveau du middleware afin de faciliter la
+programmation de nouvelles fonctionalité.
