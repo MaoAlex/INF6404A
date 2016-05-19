@@ -1,13 +1,7 @@
-Figure 7.
+Nous résumerons ici tout ce qui a été dit et fait concernant la conception de notre Middleware, ainsi que les exigences qui sont respectées par notre Middleware.
+\\
 
-\begin{figure}[h!]
-	\hspace*{-1cm}
-	\centering
-	\includegraphics[width=1.1\textwidth]{Figure8.png}
-	\caption{Le Middleware de notre Système et ses Modules}
-	\label{fig:balance}
-\end{figure}
-
+Tout d'abord, les tableaux 3, 4 et 5 font correspondre les exigences fonctionnelles, non fonctionnelles, et architecturales considérées par les modules de notre Middleware. Dans ces tableaux, les modules du middleware au niveau Gateway apparaissent d'abord (de Gestion et émission des alertes à API service), puis ce sont les modules au niveau du Moniteur qui sont présentés (de Découverte des ressources à Gestion des protocoles applicatifs).
 \begin{table}[h!]
 	\hspace*{-3cm}
 	\centering
@@ -34,7 +28,6 @@ Figure 7.
 	\end{tabular}
 	\caption{Modules de notre Middleware et Exigences Fonctionnelles}
 \end{table}
-
 \begin{table}[h!]
 	\hspace*{-3cm}
 	\centering
@@ -61,7 +54,6 @@ Figure 7.
 	\end{tabular}
 	\caption{Modules de notre Middleware et Exigences Non-Fonctionnelles}
 \end{table}
-
 \begin{table}[h!]
 	\hspace*{-4.5cm}
 	\centering
@@ -88,3 +80,17 @@ Figure 7.
 	\end{tabular}
 	\caption{Modules de notre Middleware et Exigences Architecturales}
 \end{table}
+
+Dans le tableau 2, l'exigence non-fonctionnelle de sécurité et de privacité, ainsi que les modules de notre Middleware qui la respecte (à savoir les modules d'Authentification, de Contrôle d'accès, de Chiffrement des communications, et de Sécurité et d'intégrité des communications), n'apparaissent pas, mais sont clairement visibles dans la Figure 8. 
+
+Aussi, le fait que notre Middleware soit distribué, qui correspond à une exigence architecturale, n'apparaît pas dans notre tableau 3. Cependant, cette caractéristique est explicitée dans la Figure 8, car nous voyons bien que le Middleware que nous avons établie est distribué à travers les moniteurs et les Gateways de l'hôpital.
+
+\begin{figure}[h!]
+	\hspace*{-1cm}
+	\centering
+	\includegraphics[width=1.1\textwidth]{Figure8.png}
+	\caption{Le Middleware de notre Système et ses Modules}
+	\label{fig:balance}
+\end{figure}
+
+La Figure 8 englobe tous les modules que prend en compte notre Middleware, et synthétise la manière dont notre Middleware est construit (à travers les différents modules et couches de middleware).
