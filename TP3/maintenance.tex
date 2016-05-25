@@ -1,0 +1,24 @@
+Un hôpital doit avoir un équipement le plus fiable possible. En effet, une simple défaillance peut causer la mort du patient, ou
+à défaut de graves dommages. Il est donc important de choisir prudemment les équipements à utiliser. Malheureusement l'équipement
+sans faille n'existe pas et lorsqu'une panne se produit, il est capital de pouvoir déterminer l'origine de la défaillance. Pour
+cela la présence de logs est indispensable à tous les niveaux. 
+\newline
+
+Au niveau du moniteur, il faut pouvoir savoir quel type de capteur s'est connecté (marque, modèle) afin d'identifier d'éventuelles
+incompatibilités. Il faut également enregistrer les moments où le moniteur a donné un ordre, ainsi que le ce qu'était cet ordre.
+Les réponses reçues sont aussi à conserver.
+\newline
+
+La passerelle intelligente (parfois appelée smart gateway) doit également avoir un historique des messages/demandes qu'elle a
+reçus. Allié avec les logs issus d'un moniteur cela peut permettre d'identifier des problèmes réseaux, des interblocages et bien
+d'autres dysfonctionnements.
+\newline 
+
+Pour des raisons similaires, des logs doivent être aussi présents au niveau du stockage interne et du cloud. En plus de permettre
+une meilleure compréhension des pannes, ils pourraient avoir des applications au niveau de la sécurité. Entre autre, ils seraient
+un moyen simple pour s'assurer que personne n'a essayé d'accéder à données qui ne leur sont pas destinées.
+\newline
+
+La présence de logs, impose de pouvoir les gérer. En effet, ces logs risquent d'être volumineux, il faut donc avoir la
+possibilité de trier ces derniers afin de ne récupérer que les données pertinentes. Mettons que l'on est l'intégralité des logs
+d'une passerelle intelligente, il serait souhaitable de pouvoir extraire toutes les données relatives à un moniteur.

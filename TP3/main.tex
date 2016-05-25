@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+%\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\addtolength{\topmargin}{-.975in}
+%\pagenumbering{gobble}
+\usepackage{url}
+%\usepackage{hyperref}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+
+
+
+
+\title{Troisième Rapport INF6404A : Application et Architecture}
+\author{
+	Alexandre Mao\\
+	David Johannès \\
+	Fabien Berquez \\
+	Philippe Troclet \\
+	D\'{e}partement G\'{e}nie Informatique et G\'{e}nie Logiciel \\
+	\'{E}cole Polytechnique de Montr\'{e}al, Qu\'{e}bec, Canada \\
+	\texttt{alexandre.mao@polymtl.ca}\\
+	\texttt{david.johannes@polymtl.ca}\\
+	\texttt{fabien.berquez@polymtl.ca}   \\
+	\texttt{philippe.troclet@polymtl.ca}   \\
+}
+\date{31 mai 2016}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\input{intro.tex}
+
+ 
+\section{Couche Applicative}
+\subsection{Interne à l'hôpital}
+\input{maintenance.tex}
+\subsection{Externe à l'hôpital}
+
+\bibliographystyle{unsrt}
+
+
+
+
+\bibliography{references}
+
+
+
+
+\end{document}
