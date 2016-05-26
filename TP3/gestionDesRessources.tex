@@ -1,0 +1,19 @@
+La gestion des ressources est une discipline présente dans tous les domaines. Le domaine médical ne fait pas exception à cette
+règle. En effet, un certain équipement est nécessaire pour traiter les malades. Ce matériel peut se dégrader avec le temps ou
+suite à un accident. A terme il faudra donc le remplacer. Afin de procéder aux achats, il est préférable de faire un inventaire,
+cela permet de faire des commandes globales et donc d'économiser de l'argent. De nombreux commerces ferment durant un inventaire
+afin de simplifier l'opération, toutefois cette solution n'est pas envisageable dans le cas des hôpitaux en général, en
+particulier cela serait inacceptable dans le service des urgences.
+\newline
+
+Le système doit donc permettre de faire un inventaire. Il serait préférable qu'il permette non seulement de connaître le nombre de
+dispositifs selon le type de ces derniers, mais aussi le nombre de dispositifs d'un certain modèle. En effet, un modèle pourrait
+posséder plus de fonctionnalités, ce qui le rendrait indispensable pour certaines situations, ou du moins plus pratique. Intégrer
+cette fonctionnalité à notre système plutôt que de se basé sur un logiciel/mécanisme déjà existant a quelques avantages
+non négligeables. En particulier, sous l'hypothèse que chaque capteur possède un trait unique, il est possible d'automatiser une
+partie du processus. Comme exemple de trait distinctif, on peut penser aux adresses mac que des constructeurs donnent à leurs
+produits. Le principe de fonctionnement serait le suivant: lorsque le capteur se déclare à son moniteur, ce dernier informerait le
+système (via un message à la passerelle intelligente) de la connexion qui vient de s'établir. La passerelle pourrait alors
+informer un serveur interne qu'un capteur ayant un tel id vient d'initier une connexion. Le système vérifie s'il connaît cet id,
+si ce n'est pas le cas il envoie un message à la passerelle demandant plus d'information. Il sera alors de la responsabilité de la
+passerelle de le renseigner.
