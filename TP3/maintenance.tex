@@ -49,3 +49,18 @@ patient : un médecin pourrait prendre des décision basées sur des données fi
 technique venait à avoir accès à des données d'un patient (suit à un mélange entre les deux types de données), cela
 représenterait une atteinte à la vie privée. Et il faut garantir que les réglages faits pour les tests ne se propage pas en dehors
 du domaine de test, sinon le bien être et la santé des patients est à risque.
+\newline
+
+Dans le but de lever toute ambigüité, nous allons maintenant détailler les requis qu'un système de ce type devrait supporter.
+\begin{enumerate}
+    \item disponibilité et fiabilité: si un problème survient, il faut pour le diagnostiquer rapidement. Pour cela il faut que le
+    système soit accessible et que, si une panne venait à se produire, cette dernière n'entrave pas le bon fonctionnement. Ou du
+    moins pendant un temps raisonnable.
+    \item authentification: afin de préserver la sécurité, il est souhaitable que seul le service de maintenance ait accès à ce
+    service. La présence d'un mécanisme d'authentification est donc nécessaire.
+    \item anonymiser: les logs ne doivent pas permettre d'identifier le patient auxquels ils se rapportent. Il est possible que
+    certaines situations exigent de connaître plus de données afin d'identifier un dysfonctionnement. L'obtention de ces données
+    devra se faire par le bais d'un médecin.
+    \item gestion et contrôle des ressources: connaître l'identité de chaque dispositif (marque/modèle) faciliterait le travail de
+    maintenance.
+\end{enumerate}
