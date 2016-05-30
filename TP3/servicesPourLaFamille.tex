@@ -1,9 +1,16 @@
-Le système que nous proposons dans le présent document possédera des services accessibles depuis l'extérieur. Parmi ces
+Le système que nous proposons dans le présent document possédera des services accessibles depuis l'extérieur, et que nous pouvons visualiser à la figure \ref{famille}. Parmi ces
 fonctionnalités, certaines seront dédiées à la famille des patients. Ces services auraient, bien entendu, un contrôle d'accès très
 strict. Une possibilité que nous avons envisagée est l'envoie d'un sms aux numéros à prévenir en cas d'urgence d'un patient. Ce
 sms contiendrait un mot de passe et un identifiant valides que durant la période d'hospitalisation. Le destinataire pourrait alors
 se connecter à un site web (via une connexion sécurisée) où il pourrait trouver différentes informations et différents conseils.
 \newline
+\begin{figure}[h!]
+	\hspace*{-2.5cm}
+	\centering
+	\includegraphics[width=1.4\textwidth]{famille.png}
+	\caption{Services de la Couche Applicative du côté des Proches du Patient}
+	\label{famille}
+\end{figure}
 
 Les informations visibles seraient la localisation de l'hôpital, comment s'y rendre ainsi que la chambre du patient. On pourrait
 ajouter à cela les horaires des visites. Si l'on désire pousser cette idée plus loin, on peut imaginer un système où la famille

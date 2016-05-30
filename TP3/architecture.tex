@@ -1,5 +1,12 @@
-Du point de vue architectural, à savoir de notre point de vue, le système que nous mettons en place au niveau de la couche applicative doit respecter plusieurs requis, notamment pour permettre à notre application d'être conforme aux normes juridiques du milieu médical.
+Du point de vue architectural, à savoir de notre point de vue, le système que nous mettons en place au niveau de la couche applicative doit respecter plusieurs requis, notamment pour permettre à notre application d'être conforme aux normes juridiques du milieu médical. Les services prévus à cet effet apparaissent à la figure \ref{architecture}.
 \\
+\begin{figure}[h!]
+	\hspace*{-2.5cm}
+	\centering
+	\includegraphics[width=1.4\textwidth]{architecture.png}
+	\caption{Services de la Couche Applicative du côté de l'Architecture}
+	\label{architecture}
+\end{figure}
 
 L'application proposée devra tout d'abord s’adapter, en terme de services proposés, à l’utilisateur, que ce soit le médecin, l'infirmier, la personne de la maintenance, le proche de la famille, ou l'hôpital. Ainsi, un système d’authentification est mis en place, et la personne devra s’identifier pour avoir accès aux services proposés. Chaque personne n’aura par conséquent pas les mêmes permissions, que ce soit en terme de visualisation des informations, mais aussi en terme de modifications de celles-ci. Ainsi, le médecin aura accès à l’historique des données et aux données courantes concernant le patient, et il pourra aussi apporter des modifications ; l’infirmier n’aura accès qu’aux données courantes ; la personne de la maintenance aura accès uniquement à l’historique des informations concernant les différents dispositifs utilisés ; l'hôpital aura accès à tout type d'informations et pourra les modifier afin de supprimer les informations périmées ou non utiles ; le proche de la famille pourra avoir accès aux informations non sensibles du patient afin d'avoir une connaissance de l'environnement du patient.
 
