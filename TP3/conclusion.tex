@@ -1,16 +1,16 @@
-TODO nouvelle conclusion
-%-------------------- ancienne conclusion --------------------
-%-------------------------------------------------------------
-%Dans le premier rapport, nous avions présenté notre solution IoT orientée Smart Health, afin de résoudre le problème de congestion des hôpitaux dans les services de soins intensifs. Plus précisément, nous avions proposé les dispositifs et les protocoles de communication et de réseau de notre solution. Enfin, nous avions abordé les enjeux liès à la QoS, et à la sécurité et la privacité de notre solution.
-%\\
+Dans le premier et le deuxième rapports, nous avions présenté notre solution IoT orientée Smart Health, afin de résoudre le problème de congestion des hôpitaux dans les services de soins intensifs. Plus précisément, nous avions proposé les dispositifs et les protocoles de communication et de réseau (rapport 1) ainsi que le middleware (rapport 2) de notre solution. Enfin, nous avions abordé les enjeux liès à la QoS, et à la sécurité et la privacité de notre solution.
+\\
 
-%Le présent rapport a permis quant à lui de présenter le rôle du middleware dans la réponse aux problématiques de congestion de l'hôpital dans les services de soins intensifs (donc dans le cadre de notre solution). Les exigences de ces dernières ont été séparées en trois catégories, à savoir les exigences fonctionnelles, non-fonctionnelles et architecturales. Afin de remplir les différentes fonctionnalités attendues du système, différents modules au sein de notre middleware ont ainsi été identifiés. Chaque module serait destiné à remplir une fonctionnalité majeure, et à respecter une ou possiblement plusieurs exigences du middleware. Par ailleurs, nous avons présenté une conception répartie pour le middleware, conception qui peut se résumer par la présence de middlewares distincts au niveau du moniteur et de la passerelle (gateway). Nous proposons des middlewares qui pourraient opérer de manière locale comme dans un hôpital, mais qui pourraient aussi être intégrés à une plateforme IoT \cite{IBM}.
+Le présent rapport a permis quant à lui de présenter les différents services de la couche applicative de notre solution, à travers différents points de vue, comme ceux du personnel médical, du personnel de maintenance, des proches du patient, de l'hôpital, et de l'architecture. Le but étant également de faire en sorte que ces services respectent certains requis en vue de répondre correctement à la problématique de congestion de l'hôpital dans le secteur des soins intensifs. 
 
-%Dans ce rapport, nous avons également mis l'accent sur les considérations sécuritaires et de confidentialité, à prendre en compte lors de la conception d'un tel système, ou plus précisément d'un tel middleware.
-%\\
+Aussi, dans ce rapport, nous avons abordé les problèmes liés à la Qalité de Service (QoS), et à la sécurité et privacité de notre solution, et ce à travers les différentes couches de notre système (dispositifs et protocoles de communication, middleware, et services). La figure \ref{final} permet d'avoir une vue d'ensemble de ce qui a été abordé, analysé, et conceptualisé dans ce rapport.
+\\
+\begin{figure}[h!]
+	\hspace*{-4.2cm}
+	\centering
+	\includegraphics[width=1.7\textwidth]{final.png}
+	\caption{Services proposés par notre Solution (Couche Applicative), QoS, Sécurité et Privacité}
+	\label{final}
+\end{figure}
 
-%L'objet du prochain rapport sera d'établir et de conceptualiser l'architecture de notre solution IoT orientée Smart Health,
-%incluant la manière de stocker les données dans le Cloud, et les différentes façon dont notre solution sera exploitable à travers
-%une application. Ce dernier rapport résumera la conception générale de notre solution.
-%-------------------- Fin ancienne conclusion --------------------
-%-----------------------------------------------------------------
+Par la suite, l'objectif sera de présenter en classe notre solution, notamment au niveau de son architecture, et de mettre en contexte les problématiques de QoS, et de confidentialité et de sécurité.
