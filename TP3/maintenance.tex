@@ -26,19 +26,19 @@ d'autres dysfonctionnements.
 
 Pour des raisons similaires, des logs doivent être aussi présents au niveau du stockage interne et du cloud. En plus de permettre
 une meilleure compréhension des pannes, ils pourraient avoir des applications au niveau de la sécurité. Entre autre, ils seraient
-un moyen simple pour s'assurer que personne n'a essayé d'accéder à données qui ne leur sont pas destinées.
+un moyen simple pour s'assurer que personne n'a essayé d'accéder à des données qui ne leur sont pas destinées.
 \newline
 
-La présence de logs, impose de pouvoir les gérer. En effet, ces logs risquent d'être volumineux, il faut donc avoir la
+La présence de logs impose de pouvoir les gérer. En effet, ces logs risquent d'être volumineux, il faut donc avoir la
 possibilité de trier ces derniers afin de ne récupérer que les données pertinentes. Mettons que l'on ait l'intégralité des logs
 d'une passerelle intelligente, il serait souhaitable de pouvoir extraire toutes les données relatives à un moniteur. De ce fait,
 il faut intégrer un module de récupération de données permettant de filtrer les données via une description de ce que l'on veut
 récupérer. Idéalement et afin d'être le plus flexible possible, ces descriptions seraient faites via un langage de requêtes
 structurées. En effet, les données et capteurs utilisés peuvent varier d'un patient à l'autre, aussi lors de l'enquête suite à une
-panne ou lors de tests, il est important faire du cas par cas et ne pas être prisonnier d'outils trop généraux.
+panne ou lors de tests, il est important de faire du cas par cas et de ne pas être prisonnier d'outils trop généraux.
 \newline
 
-Par ailleurs, la récupération de ses logs doit se faire de manière distincte de l'obtention des données d'un patient. Ces logs
+Par ailleurs, la récupération de ces logs doit se faire de manière distincte de l'obtention des données d'un patient. Ces logs
 étant destinés au service technique, aucune information personnelle ne doit transparaître. En particulier, ni le nom ni l'id du
 patient ne doivent être visibles. De plus, le service technique doit savoir quelle version de chaque logiciel est présent sur
 chaque objet connecté de l'hôpital. Cela permettrait d'agir efficacement si un bug, problème de compatibilité, etc ... Venait à se
@@ -56,14 +56,14 @@ machines dédiées aux tests que le service technique a en sa possession). Un au
 le mode test (ses données, ses décisions) et le fonctionnement du mode normal. Ces deux modes vont sûrement se côtoyer, mais il
 est impensable que l'un interfère avec l'autre. Si les données venaient à se mélanger, cela pourrait être dangereux pour le
 patient : un médecin pourrait prendre des décision basées sur des données fictives (destinées aux tests). De plus, si le service
-technique venait à avoir accès à des données d'un patient (suit à un mélange entre les deux types de données), cela
-représenterait une atteinte à la vie privée. Et il faut garantir que les réglages faits pour les tests ne se propage pas en dehors
+technique venait à avoir accès à des données d'un patient (suite à un mélange entre les deux types de données), cela
+représenterait une atteinte à la vie privée. Et il faut garantir que les réglages faits pour les tests ne se propagent pas en dehors
 du domaine de test, sinon le bien être et la santé des patients est à risque.
 \newline
 
 Dans le but de lever toute ambigüité, nous allons maintenant détailler les requis qu'un système de ce type devrait supporter.
 \begin{enumerate}
-    \item disponibilité et fiabilité: si un problème survient, il faut pour le diagnostiquer rapidement. Pour cela il faut que le
+    \item disponibilité et fiabilité: si un problème survient, il faut pouvoir le diagnostiquer rapidement. Pour cela il faut que le
     système soit accessible et que, si une panne venait à se produire, cette dernière n'entrave pas le bon fonctionnement. Ou du
     moins pendant un temps raisonnable.
     \item authentification: afin de préserver la sécurité, il est souhaitable que seul le service de maintenance ait accès à ce
