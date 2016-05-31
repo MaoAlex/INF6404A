@@ -44,7 +44,7 @@
 
  
 \section{Couche Applicative}
-Dans cette section, nous présentons les différents services liés à notre solution \ref{vermesan2014internet} \ref{catarinucci2015iot}. Pour se faire, nous regarderons et analyserons les différentes fonctionnalités de notre application à travers différents points de vue : celui du personnel médical (médecins et infirmiers), celui du personnel de la maintenance, celui de l'hôpital (en terme de gestion des ressources et des informations), celui de l'architecture (c'est-à-dire notre point de vue), et enfin celui des proches du patient.
+Dans cette section, nous présentons les différents services liés à notre solution \cite{vermesan2014internet} \cite{catarinucci2015iot}. Pour se faire, nous regarderons et analyserons les différentes fonctionnalités de notre application à travers différents points de vue : celui du personnel médical (médecins et infirmiers), celui du personnel de la maintenance, celui de l'hôpital (en terme de gestion des ressources et des informations), celui de l'architecture (c'est-à-dire notre point de vue), et enfin celui des proches du patient.
 
 \subsection{Du point de vue du Personnel Médical}
 \input{medical.tex}
@@ -72,7 +72,15 @@ Dans cette section, nous discuterons de la sécurité et de la privacité au sei
 \input{securite.tex}
 
 \section{Qualité de Service (QoS)}
-Dans cette section, nous discuterons de la qualité de service au sein de notre système, à savoir à travers les différentes couches du système. Plus précisément, l'analyse de la QoS se fera autour des notions de disponibilité, de fiabilité et de tolérance aux pannes \ref{gia2015fault}, indispensables dans une solution telle que la nôtre. %Les modules de notre couche de QoS apparaissent à la figure \ref{qos}.
+Dans cette section, nous discuterons de la qualité de service au sein de notre système, à savoir à travers les différentes couches du système. Plus précisément, l'analyse de la QoS se fera autour des notions de disponibilité, de fiabilité et de tolérance aux pannes \cite{gia2015fault}, indispensables dans une solution telle que la nôtre. Les modules de notre couche de QoS apparaissent à la figure \ref{qos}.
+\newline
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{qos.png}
+	\caption{Couche Qualité de Service (QoS) de notre Solution}
+	\label{qos}
+\end{figure}
+
 \input{qos.tex}
 
 \section{Conclusion}

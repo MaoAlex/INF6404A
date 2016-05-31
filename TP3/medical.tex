@@ -10,7 +10,7 @@ L’architecture que nous avons proposée et les différents capteurs qui pourro
 
 Nous allons distinguer deux applications, l’une générale destinée au suivi des patients et du département de soins intensifs et la
 seconde application qui permettra un suivi plus poussé du profil d’un patient en particulier. La figure \ref{appli} illustre cette
-différenciation de services proposés en fonction de l'authentification. Nous allons détailler les différentes fonctionnalités de
+différenciation de services proposés en fonction de l'authentification. Aussi, la figure \ref{appli2} donne un exemple des services auxquels aurait accès un médecin. Nous allons détailler les différentes fonctionnalités de
 la première application destinée au suivi général des patients du département. En effet, nous pouvons supposer qu’au niveau du
 département de soins intensifs, il y a la présence d’une zone réservée au personnel d’astreinte où un service de gestion des
 patients serait le bienvenu. Cette première application aura pour but d’aider le personnel médical dans la surveillance des
@@ -22,6 +22,14 @@ serveurs privés de l’hôpital. Cette première application sera destinée à 
 	\includegraphics[width=1.4\textwidth]{Application.png}
 	\caption{Différenciation des Services en fonction de l'Authentification du Personnel Médical}
 	\label{appli}
+\end{figure}
+
+\begin{figure}[h!]
+	\hspace*{-2.5cm}
+	\centering
+	\includegraphics[width=1.4\textwidth]{exempleApplication.jpg}
+	\caption{Exemple des Services accessibles par un Médecin}
+	\label{appli2}
 \end{figure}
 
 Pour intégrer les exigences de sécurité et de confidentialité que requiert le domaine médical, l’application contiendra un module
